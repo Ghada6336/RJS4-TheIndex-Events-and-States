@@ -1,8 +1,21 @@
 import React from "react";
 
-const AuthorDetail = props => {
+function AuthorDetail (props){
     const author = props.author;
     const authorName = `${author.first_name} ${author.last_name}`;
+    const booklist =author.books.map(book =>{
+        return (
+            <tr>
+            <td> {book.title} </td>
+            <td> {author.first_name} {author.last_name}</td>
+            <td> <button className="btn" style={{backgroundColor: book.color}}/></td>
+            </tr>
+    
+           
+
+        );
+    });
+    
     return (
     
 <div className="author col-xs-10">
@@ -19,20 +32,9 @@ const AuthorDetail = props => {
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-                <td></td>  
-                <td>
-                    <button className="btn" style={{backgroundColor: "blue"}}/>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>
-                    <button className="btn" style={{backgroundColor: "red"}}/>
-                </td>
-            </tr>
+            
+                {booklist}
+
         </tbody>
     </table>
 </div>

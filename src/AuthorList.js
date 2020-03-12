@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 // Components
 import AuthorCard from "./AuthorCard";
-
+import SearchBar from "./SearchBar";
 
 class AuthorList extends Component {
   state = {
@@ -30,7 +30,7 @@ class AuthorList extends Component {
     return (
       <div className="authors">
         <h3>Authors</h3>
-        
+        <SearchBar filter={this.filterAuthors} />
         <div className="row">{authorCards}</div>
       </div>
     );
