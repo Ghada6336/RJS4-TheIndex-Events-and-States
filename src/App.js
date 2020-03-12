@@ -25,7 +25,7 @@ class App extends Component {
         <AuthorList
           authors={authors}
           selectAuthor={this.selectAuthor}
-          
+          filterAuthors={this.filterAuthors}
         />
       );
     }
