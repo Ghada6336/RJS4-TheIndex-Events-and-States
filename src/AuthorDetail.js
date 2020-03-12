@@ -1,20 +1,11 @@
 import React from "react";
-
+import Book from "./Book";
 function AuthorDetail (props){
     const author = props.author;
     const authorName = `${author.first_name} ${author.last_name}`;
-    const booklist =author.books.map(book =>{
-        return (
-            <tr>
-            <td> {book.title} </td>
-            <td> {author.first_name} {author.last_name}</td>
-            <td> <button className="btn" style={{backgroundColor: book.color}}/></td>
-            </tr>
-    
-           
-
-        );
-    });
+    const books = author.books.map(book => (
+        <Book book={book} key={book.title} author={author} />
+      ));
     
     return (
     
@@ -32,8 +23,8 @@ function AuthorDetail (props){
             </tr>
         </thead>
         <tbody>
-            
-                {booklist}
+        
+                {books}
 
         </tbody>
     </table>
